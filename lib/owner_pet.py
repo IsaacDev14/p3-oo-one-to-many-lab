@@ -22,3 +22,6 @@ class Owner:
         if not isinstance(pet, Pet):
             raise Exception("pet must be an instance of Pet")
         pet.owner = self
+
+    def get_sorted_pets(self):
+        return sorted(self.pets(), key=lambda pet: pet.name)
