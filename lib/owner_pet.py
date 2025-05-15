@@ -9,6 +9,7 @@ class Pet:
         self.name = name
         self.pet_type = pet_type
         self.owner = owner
+        Pet.all.append(self)
 
 class Owner:
     def __init__(self, name):
