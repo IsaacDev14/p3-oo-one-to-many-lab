@@ -1,8 +1,11 @@
-PET_TYPES = ["dog", "cat", "rodent", "bird", "reptile", "exotic"]
+
 
 class Pet:
+    PET_TYPES = ["dog", "cat", "rodent", "bird", "reptile", "exotic"]
     all = []
     def __init__(self, name, pet_type, owner = None ):
+        if pet_type not in Pet.PET_TYPES:
+            raise Exception(f"Invalid pet_type: {pet_type}. Must be one of {Pet.PET_TYPES}")
         self.name = name
         self.pet_type = pet_type
         self.owner = owner
